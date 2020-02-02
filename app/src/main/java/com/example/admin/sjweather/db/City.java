@@ -1,12 +1,13 @@
 package com.example.admin.sjweather.db;
 
+
 import org.litepal.crud.DataSupport;
 
 /**
  * Created by admin on 2020/2/2.
  */
 
-public class City extends DataSupport{
+public class City extends DataSupport {
     private int id;
     private String cityName;
     private int cityCode;
