@@ -1,5 +1,6 @@
 package com.example.admin.sjweather;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Build;
@@ -23,6 +24,7 @@ import com.bumptech.glide.load.data.StreamAssetPathFetcher;
 import com.bumptech.glide.load.model.StringLoader;
 import com.example.admin.sjweather.gson.Forecast;
 import com.example.admin.sjweather.gson.Weather;
+import com.example.admin.sjweather.service.AutoUpdateService;
 import com.example.admin.sjweather.util.HttpUtil;
 import com.example.admin.sjweather.util.Utility;
 
@@ -223,5 +225,7 @@ public class WeatherActivity extends AppCompatActivity {
         sportText.setText(sport);
         weatherLayout.setVisibility(View.VISIBLE);
 
+        Intent intent = new Intent(this, AutoUpdateService.class);
+        startService(intent);
     }
 }
